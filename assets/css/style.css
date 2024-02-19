@@ -151,6 +151,11 @@ box-shadow: 5px 10px 30px hsla(39, 100%, 50%, 0.3);
     -ms-transition: var(--transition);
     -o-transition: var(--transition);
 }
+.header.active{
+    background: var(--cultured);
+    box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.1);
+    padding-block: 20px;
+}
 .logo{width: 120px;}
 
 .logo img{width: 100%;}
@@ -182,6 +187,10 @@ font-size: 35px;
           -o-transition: 0.2s ease-in ;
           z-index: 3;
 }
+.navbar.active {
+    left: 0;
+    transition: 0.25s ease-out;
+  }
 .navbar-list{
     margin-bottom: 15px;
 }
@@ -589,13 +598,15 @@ color: var(--cultured);
     -ms-transition: var(--transition);
     -o-transition: var(--transition);
     box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.5);
-    /* opacity: 0;
-    visibility: hidden; */
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
 }
-.go-top:hover{
+.go-top:is(:hover, :focus){
     color: var(--orange-web);
+
 }
-.go-top .active{
+.go-top.active{
     opacity: 1;
     visibility: visible;
 }
@@ -901,7 +912,16 @@ color: var(--cultured);
 /* styles for larger than 1200 */
 
 @media (min-width:1200px){
-    :root {
-        --fs-1: 45px;
-      }
+
+.container{ max-width: 1150px;}
+
+
+.departments-title{ max-width: 550px;}
+
+
+.instructor { padding-bottom: 150px; }
+
+
+.cta .title-wrapper { max-width: 64%; }
+.cta-banner { left: 68%; }
 }
